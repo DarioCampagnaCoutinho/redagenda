@@ -1,19 +1,15 @@
 package com.java.redagenda.dominio;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -40,9 +36,7 @@ public class Contato implements Serializable {
 	private String logradouro;
 	
 	@Column(nullable = false)
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "Data é uma informação obrigatória")
-	private Date data;
+	private LocalDate data;
 
 }
