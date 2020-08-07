@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Adicionar Contato</title>
+</head>
+<body>
+	<div>
+		<div>
+			<strong>Cadastro de Contato</strong>
+		</div>
+		<div>
+			<form th:object="${contato}" th:action="@{/salvar}"
+				method="POST">
+				<div>
+					<fieldset>
+						<div>
+							<div>
+								<input type="text" id="id" th:field="*{id}" readonly="readonly" />
+							</div>
+						</div>
+						<div>
+							<div>
+							    <label>Nome</label>
+								<input type="text" id="nome" th:field="*{nome}" />
+							</div>
+						</div>
+						<div>
+							<div>
+							    <label>Telefone</label>
+								<input type="text" id="telefone" th:field="*{telefone}" />
+							</div>
+						</div>
+						<div>
+							<div>
+							    <label>Logradouro</label>
+								<input type="text" id="logradouro" th:field="*{logradouro}" />
+							</div>
+						</div>
+						<div>
+							<div>
+							    <label>Data</label>
+								<input type="date" id="data" th:field="*{data}" />
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div>
+					<button type="submit">Salvar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

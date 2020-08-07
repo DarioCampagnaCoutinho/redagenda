@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,6 +38,7 @@ public class Contato implements Serializable {
 	private String logradouro;
 	
 	@Column(nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "Data é uma informação obrigatória")
 	private LocalDate data;
 
