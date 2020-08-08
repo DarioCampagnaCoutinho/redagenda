@@ -42,5 +42,13 @@ public class ContatoControler {
 	public ModelAndView editarContato(@PathVariable("id") Integer id) {
 		return adicionar(contatoService.buscarPorId(id));
 	}
+	
+	@GetMapping("/deletar/{id}")
+	public ModelAndView deletarContato(@PathVariable("id") Integer id) {
+		
+		contatoService.delete(id);
+		
+		return buscarTodos();
+	}
 
 }
